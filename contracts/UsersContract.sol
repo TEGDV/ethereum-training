@@ -28,7 +28,8 @@ contract UsersContract {
     User memory user = users[_who];  
     return(user.name,user.surName);
   }
-  function userJoined(address _who) private view returns(bool){
+  //This function needs to be private in production
+  function userJoined(address _who) public view returns(bool){
     return joinedUsers[_who];
   } 
   function totalUsers()public view returns(uint){
